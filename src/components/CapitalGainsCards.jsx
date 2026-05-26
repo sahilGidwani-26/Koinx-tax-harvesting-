@@ -2,30 +2,6 @@ import React from "react";
 import { Zap } from "lucide-react";
 import { formatCurrency } from "../lib/utils";
 
-function GainsRow({ label, short, long, highlight }) {
-  return (
-    <div className={`flex items-center justify-between py-2 ${highlight ? "font-semibold" : ""}`}>
-      <span className={`text-sm ${highlight ? "font-semibold" : "text-gray-600"}`}>{label}</span>
-      <div className="flex gap-8 sm:gap-12">
-        <span
-          className={`text-sm w-24 text-right ${
-            short < 0 ? "text-red-500" : short > 0 ? "text-green-600" : "text-gray-800"
-          } ${highlight ? "font-semibold" : ""}`}
-        >
-          {formatCurrency(short)}
-        </span>
-        <span
-          className={`text-sm w-24 text-right ${
-            long < 0 ? "text-red-500" : long > 0 ? "text-green-600" : "text-gray-800"
-          } ${highlight ? "font-semibold" : ""}`}
-        >
-          {formatCurrency(long)}
-        </span>
-      </div>
-    </div>
-  );
-}
-
 function GainsCard({ title, data, realised, effectiveGains, savings, isAfter }) {
   if (!data) return null;
   const stcgNet = data.stcg.profits + data.stcg.losses;

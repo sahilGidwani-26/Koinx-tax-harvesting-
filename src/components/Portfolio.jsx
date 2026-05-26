@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { ArrowUpRight, ArrowDownRight, Search } from "lucide-react";
 import { formatCurrency, formatNumber } from "../lib/utils";
 
